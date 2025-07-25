@@ -8,16 +8,16 @@ import { GridItemType } from './types/GridItemType';
 import {GridItem} from './components/GridItem/index'
 import {items} from './data/Items';
 import { formatTimeElapsed } from './helpers/formatTimeElapsed';
-// import { clearInterval } from 'timers';
+
 
 const App = () => {
   const [playing, setPlaying] = useState<boolean>(false);
   const [timeElapsed, setTimeElapsed] = useState<number>(0);
   const [moveCount, setMoveCount] = useState<number>(0);
-  const [showCount, setShowCount] = useState<number>(0);
+  const [shownCount, setShownCount] = useState<number>(0);
   const [gridItems, setGridItems] = useState<GridItemType[]>([]);
 
-  useEffect(() => resetAndCreatGrid(), []);
+  useEffect(() => resetAndCreateGrid(), []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -25,13 +25,46 @@ const App = () => {
       }, 1000);
     return () => clearInterval(timer);
   }, [playing, timeElapsed]);
-  
-  const resetAndCreatGrid = () => {
+
+  // Lógica para verificar se os itens são iguais
+  useEffect(() =>{
+    if (shownCount === 2) {
+      let opened = gridItems.filter(item => item.shown === true);
+      if (opened.length === 2) {
+        // Verificar se os itens são iguais e torná-los permanentes
+        if (opened[0].item === opened[1].item) {
+           let tmpGrid = [...gridItems];
+            for (let i in tmpGrid) {
+              if (tmpGrid[i].shown) {
+                tmpGrid[i].permanentShown = true;
+                tmpGrid[i].shown = false;
+              }
+            }
+            setGridItems(tmpGrid);
+            setShownCount(0);
+            setMoveCount(moveCount => moveCount + 1);
+            } else {
+            // se forem diferentes fecha eles
+            setTimeout (() => {
+            let tmpGrid = [...gridItems];
+            for (let i in tmpGrid) {
+                tmpGrid[i].shown = false;
+              }
+              setGridItems(tmpGrid);
+              setShownCount(0);
+              setMoveCount(moveCount => moveCount + 1);
+            }, 1000);
+        }
+      }
+    }
+  }, [shownCount, gridItems, moveCount]);
+
+  const resetAndCreateGrid = () => {
 
     //Passo 1 - Resetar o jogo
     setTimeElapsed(0);
     setMoveCount(0);
-    setShowCount(0);
+    setShownCount(0);
    
     // Passo 2 - Criar o grid e começar o jogo
 
@@ -61,6 +94,14 @@ const App = () => {
   };
 
   const handleItemClick = (index: number) => {
+    if (playing && index !== null && shownCount < 2) {
+      let tmpGrid = [...gridItems];
+      if (tmpGrid[index].shown === false && tmpGrid[index].permanentShown === false) {
+        tmpGrid[index].shown = true;
+        setGridItems(tmpGrid);
+        setShownCount(shownCount + 1);
+      }
+    }
   }
 
   return (
@@ -72,10 +113,10 @@ const App = () => {
 
         <C.InfoArea>
           <InfoItem label="Tempo" value={formatTimeElapsed(timeElapsed)} />
-          <InfoItem label="Movimentos" value="0" />
+          <InfoItem label="Movimentos" value={moveCount.toString()} />
         </C.InfoArea>
 
-        <Button label="Reiniciar" icon={RestartIcon} onClick={resetAndCreatGrid} />
+        <Button label="Reiniciar" icon={RestartIcon} onClick={resetAndCreateGrid} />
       </C.Info>
       <C.GridArea>
         <C.Grid>
