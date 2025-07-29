@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+// Container principal do botão.
+// Define dimensões, cor, borda e efeito de hover.
 export const Container = styled.button`
     width: 200px;
     height: 50px;
@@ -16,6 +18,8 @@ export const Container = styled.button`
     }
 `;
 
+// Área que envolve o ícone dentro do botão.
+// Aplica padding e uma borda de separação visual.
 export const IconArea = styled.div`
     height: inherit;
     display: flex;
@@ -25,10 +29,14 @@ export const IconArea = styled.div`
     padding: 0 15px;
 `;
 
+// Estilização da imagem do ícone do botão.
+// Define tamanho fixo de altura.
 export const Icon = styled.img`
     height: 20px;
 `;
 
+// Área do texto (label) do botão.
+// Centraliza o texto vertical e horizontalmente.
 export const Label = styled.div`
     height: inherit;
     color: #FFF;

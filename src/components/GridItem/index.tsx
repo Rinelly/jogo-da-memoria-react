@@ -8,6 +8,13 @@ type Props = {
     onClick: () => void
 }
 
+/**
+ * Componente visual que representa uma célula do grid no jogo da memória.
+ * Ele exibe o ícone da carta com base no estado do item (virado ou não).
+ * 
+ * @param item - Objeto que define o estado da carta (virada, revelada, ou escondida).
+ * @param onClick - Função executada ao clicar no item, usada para manipular a lógica do jogo.
+ */
 export const GridItem = ({item, onClick}: Props)=> {
     return (
         <C.Container 
