@@ -9,12 +9,12 @@ export const Container = styled.div`
 // Estilo do rótulo (label) da informação, com cor e tamanho reduzido.
 export const Label = styled.div`
     font-size: 15px;
-    color: #6A7D88;
+    color: #565554;
 `;
 
 // Estilo do valor exibido (como tempo ou movimentos), em destaque.
 export const Value = styled.div`
     font-size: 37px;  
     font-weight: bold;
-    color: #101C40;
+    color: #FF8C46;
 `;

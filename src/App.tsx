@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import * as C from './App.styles';
 
 // Imagens e icones 
-import logoImage from './assets/devmemory_logo.png';
+import logoImage from './assets/memory-fox.png';
 import RestartIcon from './svgs/restart.svg';
 
 // Componentes 

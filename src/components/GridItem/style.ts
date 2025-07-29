@@ -7,7 +7,7 @@ type ContainerProps = {
 // Estilo do container do item do grid.
 // Muda a cor de fundo com base na prop `showBackground` (carta virada ou não).
 export const Container = styled.div<ContainerProps>`
-    background-color: ${props => props.showBackground ? '#1550FF' : '#E2E3E3'};
+    background-color: ${props => props.showBackground ? '#FF8C46' : '#E2E3E3'};
     height: 100px;
     border-radius: 20px;
     display: flex;
