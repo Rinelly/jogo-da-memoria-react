@@ -1,6 +1,6 @@
 import { GridItemType } from '../../types/GridItemType';
 import { GridItem } from '../GridItem';
-import * as C from '../../App.styles';
+import * as C from './styles';
 
 type Props = {
   gridItems: GridItemType[];
