@@ -27,3 +27,34 @@ export const Icon = styled.img<IconProps>`
     height: 40px;
     opacity: ${props => props.opacity ?? 1};
 `;
+
+export const FlipCard = styled.div<{ $flipped: boolean }>`
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  transform: ${({ $flipped }) => ($flipped ? 'rotateY(180deg)' : 'rotateY(0deg)')};
+`;
+
+export const Front = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Back = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

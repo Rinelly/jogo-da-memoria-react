@@ -86,7 +86,3 @@ Durante este projeto, foram aplicados conhecimentos em:
 
 ---
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT.  
-Sinta-se à vontade para usar, estudar e compartilhar.

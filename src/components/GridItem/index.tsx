@@ -15,18 +15,19 @@ type Props = {
  * @param item - Objeto que define o estado da carta (virada, revelada, ou escondida).
  * @param onClick - Função executada ao clicar no item, usada para manipular a lógica do jogo.
  */
-export const GridItem = ({item, onClick}: Props)=> {
-    return (
-        <C.Container 
-            showBackground={item.permanentShown || item.shown}
-            onClick={onClick}
-        >
-            {item.permanentShown === false && item.shown === false &&
-            <C.Icon src={foxSvg} alt="" opacity={.1} />
-            }
-            {(item.permanentShown || item.shown) && item.item !== null &&
-            <C.Icon src={items[item.item].icon} alt="" />
-            }
-        </C.Container>
-    );
-}
+export const GridItem = ({ item, onClick }: Props) => {
+  const isFlipped = item.permanentShown || item.shown;
+
+  return (
+    <C.Container onClick={onClick} showBackground={item.permanentShown || item.shown}>
+      <C.FlipCard $flipped={isFlipped}>
+        <C.Front>
+          <C.Icon src={foxSvg} alt="Carta virada" opacity={0.1} />
+        </C.Front>
+        <C.Back>
+          {item.item !== null && <C.Icon src={items[item.item].icon} alt="Carta" />}
+        </C.Back>
+      </C.FlipCard>
+    </C.Container>
+  );
+};
