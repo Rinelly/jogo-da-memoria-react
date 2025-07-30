@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 20px 10px;
   flex-wrap: wrap;
 `;
