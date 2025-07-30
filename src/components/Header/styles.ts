@@ -8,6 +8,13 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   margin: 20px 10px;
   flex-wrap: wrap;
+
+   @media (max-width: 750px) {
+      justify-content: center;
+      margin-bottom: 50px;  
+      align-items: center;
+    }
+
 `;
 
 export const Info = styled.div`
