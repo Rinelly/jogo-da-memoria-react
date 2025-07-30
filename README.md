@@ -1,46 +1,92 @@
-# Getting Started with Create React App
+# 🧠 Jogo da Memória - React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto desenvolvido com React e TypeScript que simula um jogo da memória com foco em lógica, design responsivo e desempenho.  
+O objetivo é encontrar todos os pares de cartas no menor tempo e com o menor número de movimentos possível.
 
-## Available Scripts
+![preview do jogo](./src/assets/memory-fox.svg)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Cartas com ícones personalizados  
+- Cronômetro em tempo real  
+- Contador de movimentos  
+- Reconhecimento automático de pares  
+- Exibição do tempo e número de movimentos ao final da partida
+- Registro de recordes armazenado em `localStorage`  
+- Design responsivo  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Tecnologias Utilizadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ![React](https://img.shields.io/badge/-React-20232A?style=flat&logo=react)  
+- ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript)  
+- ![Styled Components](https://img.shields.io/badge/-Styled%20Components-DB7093?style=flat&logo=styled-components)  
+- ![Create React App](https://img.shields.io/badge/-Create%20React%20App-61DAFB?style=flat&logo=create-react-app&logoColor=000)  
+- ![ESLint](https://img.shields.io/badge/-ESLint-4B32C3?style=flat&logo=eslint)  
+- ![Prettier](https://img.shields.io/badge/-Prettier-F7B93E?style=flat&logo=prettier&logoColor=000)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧩 Como rodar o projeto localmente
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone o repositório:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/seu-usuario/jogo-da-memoria-react
+cd jogo-da-memoria-react
+```
 
-### `npm run eject`
+2. Instale as dependências:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Inicie o aplicativo:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+> O aplicativo será iniciado em `http://localhost:3000`
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📸 Imagens
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Abaixo, alguns exemplos do jogo em execução:
+
+### Tela Inicial
+![Tela inicial do jogo](./src/assets/print-inicio-jogo.png)
+
+### Tela de Fim de Jogo
+![Tela de fim de jogo](./src/assets/print-fim-jogo.png)
+
+---
+
+## 💡 Aprendizados
+
+Durante este projeto, foram aplicados conhecimentos em:
+- Criação de componentes reutilizáveis
+- Gerenciamento de estado com `useState` e `useEffect`
+- Lógica de jogo com tratamento de pares e delay
+- Manipulação e formatação de tempo
+- Persistência de dados com `localStorage`
+
+---
+
+## 👩‍💻 Desenvolvido por
+
+**Rinelly Vasconcelos**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/seu-usuario)
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.  
+Sinta-se à vontade para usar, estudar e compartilhar.
