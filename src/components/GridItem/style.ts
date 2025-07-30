@@ -34,7 +34,7 @@ export const FlipCard = styled.div<{ $flipped: boolean }>`
   perspective: 1000px;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.6s;
+  transition: transform 0.4s;
   transform: ${({ $flipped }) => ($flipped ? 'rotateY(180deg)' : 'rotateY(0deg)')};
 `;
 
