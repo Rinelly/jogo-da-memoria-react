@@ -1,6 +1,19 @@
 // React
 import { useEffect, useState } from 'react';
 
+/**
+ * Componente principal App
+ * 
+ * Controla o estado geral do jogo da memória:
+ * - Inicialização e embaralhamento do grid
+ * - Contador de tempo e movimentos
+ * - Checagem de pares e lógica de acerto/erro
+ * - Armazenamento e exibição de recordes no localStorage
+ * - Exibição de modal ao fim do jogo
+ * 
+ * Também renderiza os componentes Header, GameGrid e EndGameModal.
+ */
+
 // Estilos 
 import * as C from './App.styles';
 

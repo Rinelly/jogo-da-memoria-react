@@ -4,8 +4,12 @@ type ContainerProps = {
     showBackground: boolean;
 }
 
-// Estilo do container do item do grid.
-// Muda a cor de fundo com base na prop `showBackground` (carta virada ou não).
+/**
+ * Container
+ * 
+ * Componente externo que representa o corpo da carta.
+ * Usa a prop `showBackground` para alternar a cor de fundo (virada ou não).
+ */
 export const Container = styled.div<ContainerProps>`
     background-color: ${props => props.showBackground ? '#FF8C46' : '#E2E3E3'};
     height: 100px;
@@ -20,14 +24,24 @@ type IconProps = {
     opacity?: number;
 }
 
-// Estilo da imagem do ícone exibido na carta.
-// Controla o tamanho e a opacidade da imagem (útil para esconder parcialmente).
+/**
+ * Icon
+ * 
+ * Imagem exibida no centro da carta.
+ * Pode ter opacidade ajustada para efeitos de revelação.
+ */
 export const Icon = styled.img<IconProps>`
     width: 40px;
     height: 40px;
     opacity: ${props => props.opacity ?? 1};
 `;
 
+/**
+ * FlipCard
+ * 
+ * Container interno que aplica a animação de virar a carta.
+ * Gira 180 graus no eixo Y com base na prop `$flipped`.
+ */
 export const FlipCard = styled.div<{ $flipped: boolean }>`
   width: 100%;
   height: 100%;
@@ -38,6 +52,11 @@ export const FlipCard = styled.div<{ $flipped: boolean }>`
   transform: ${({ $flipped }) => ($flipped ? 'rotateY(180deg)' : 'rotateY(0deg)')};
 `;
 
+/**
+ * Front
+ * 
+ * Lado frontal da carta (mostra fundo padrão).
+ */
 export const Front = styled.div`
   position: absolute;
   width: 100%;
@@ -48,6 +67,11 @@ export const Front = styled.div`
   justify-content: center;
 `;
 
+/**
+ * Back
+ * 
+ * Lado traseiro da carta (mostra o ícone real).
+ */
 export const Back = styled.div`
   position: absolute;
   width: 100%;

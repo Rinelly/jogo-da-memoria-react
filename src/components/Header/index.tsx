@@ -1,3 +1,14 @@
+/**
+ * Componente Header
+ * 
+ * Exibe o cabeçalho principal do jogo da memória.
+ * Contém o logo, o tempo decorrido, a quantidade de movimentos e o botão de reinício.
+ * 
+ * Props:
+ * - time: tempo decorrido da partida em segundos.
+ * - moves: número de movimentos realizados.
+ * - onReset: função que reinicia o jogo ao clicar no botão de reinício.
+ */
 import * as C from './styles';
 import logoImage from '../../assets/memory-fox.svg';
 import RestartIcon from '../../svgs/restart.svg';

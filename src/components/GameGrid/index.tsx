@@ -1,3 +1,14 @@
+/**
+ * Componente GameGrid
+ * 
+ * Responsável por renderizar a grade de cartas do jogo da memória.
+ * Recebe os itens do grid e a função de clique como props.
+ * Cada item é renderizado como um componente GridItem.
+ * 
+ * Props:
+ * - gridItems: array de objetos representando o estado de cada carta no grid.
+ * - onItemClick: função executada ao clicar em uma carta, passando o índice.
+ */
 import { GridItemType } from '../../types/GridItemType';
 import { GridItem } from '../GridItem';
 import * as C from './styles';

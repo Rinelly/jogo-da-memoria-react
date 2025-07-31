@@ -1,7 +1,12 @@
-
 import styled from 'styled-components';
 
 
+/**
+ * Wrapper
+ * 
+ * Container principal do cabeçalho que alinha o logo, informações e botão.
+ * Utiliza flexbox para distribuição dos elementos e responsividade em telas menores.
+ */
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -17,6 +22,11 @@ export const Wrapper = styled.div`
 
 `;
 
+/**
+ * Info
+ * 
+ * Container que agrupa os elementos de informações (tempo e movimentos).
+ */
 export const Info = styled.div`
     display: flex;
     flex-direction: column;
@@ -28,11 +38,21 @@ export const Info = styled.div`
     }
 `;
 
+/**
+ * LogoLink
+ * 
+ * Elemento de link que envolve a imagem do logo.
+ */
 export const LogoLink = styled.a`
     display: block;
     
 `;
 
+/**
+ * InfoArea
+ * 
+ * Área que agrupa os componentes de informação (tempo e movimentos) e os distribui no layout.
+ */
 export const InfoArea = styled.div`
     width: 100%;
     margin: 10px 0;
@@ -43,4 +63,3 @@ export const InfoArea = styled.div`
       text-align: center;
     }
 `;
-

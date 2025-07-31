@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+/**
+ * Overlay
+ * 
+ * Componente visual que cobre toda a tela com fundo escuro translúcido,
+ * usado para exibir o modal de fim de jogo no centro da tela.
+ */
 export const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -15,6 +21,11 @@ export const Overlay = styled.div`
   z-index: 1000;
 `;
 
+/**
+ * Button
+ * 
+ * Botão estilizado usado no modal de fim de jogo para reiniciar a partida.
+ */
 export const Button = styled.button`
   margin-top: 20px;
   padding: 10px 20px;

@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+/**
+ * Container
+ * 
+ * Wrapper principal da aplicação que centraliza o conteúdo horizontalmente
+ * e define um layout flexível com espaçamento vertical.
+ * Se adapta a telas menores com empilhamento vertical.
+ */
 export const Container = styled.div`
     width: 100%;
     max-width: 750px;
@@ -11,4 +18,3 @@ export const Container = styled.div`
       flex-direction: column;
     }
 `;
-

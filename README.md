@@ -1,7 +1,5 @@
 # 🧠 Jogo da Memória - React
-
-Projeto desenvolvido com React e TypeScript que simula um jogo da memória com foco em lógica, design responsivo e desempenho.  
-O objetivo é encontrar todos os pares de cartas no menor tempo e com o menor número de movimentos possível.
+[![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)]()
 
 ![preview do jogo](./src/assets/memory-fox.svg)
 
@@ -28,6 +26,28 @@ O objetivo é encontrar todos os pares de cartas no menor tempo e com o menor n�
 - ![ESLint](https://img.shields.io/badge/-ESLint-4B32C3?style=flat&logo=eslint)  
 - ![Prettier](https://img.shields.io/badge/-Prettier-F7B93E?style=flat&logo=prettier&logoColor=000)
 
+---
+
+## 📂 Estrutura do Projeto
+
+```
+src/
+├── assets/
+├── components/
+│   ├── Button/
+│   ├── EndGameModal/
+│   ├── GameGrid/
+│   ├── GridItem/
+│   ├── Header/
+│   └── InfoItem/
+├── data/
+├── helpers/
+├── svgs/
+├── types/
+├── App.styles.ts
+├── App.tsx
+└── ...
+```
 ---
 
 ## 🧩 Como rodar o projeto localmente
@@ -84,5 +104,4 @@ Durante este projeto, foram aplicados conhecimentos em:
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/seu-usuario)
 
----
 
