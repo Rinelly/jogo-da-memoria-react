@@ -22,7 +22,12 @@ type Props = {
   onReset: () => void;
 };
 
-export const Header = ({ time, moves, onReset }: Props) => {
+export const Header = ({
+  time,
+  moves,
+  onReset
+ }: Props) => {
+
   return (
     <C.Wrapper>
       <C.LogoLink href="">

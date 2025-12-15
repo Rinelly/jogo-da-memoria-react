@@ -1,5 +1,7 @@
 // React
 import { useEffect, useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme } from './theme';
 
 /**
  * Componente principal App
@@ -22,11 +24,15 @@ import { Header } from './components/Header';
 import { GameGrid } from './components/GameGrid';
 import { EndGameModal } from './components/EndGameModal';
 
+
 // Tipagem de dados
 import { GridItemType } from './types/GridItemType';
 import { items } from './data/Items';
 
 const App = () => {
+
+  const [darkMode, setDarkMode] = useState(false);
+
   // Estado que indica se o jogo está em andamento.
   const [playing, setPlaying] = useState<boolean>(false);
 
@@ -49,6 +55,12 @@ const App = () => {
   const [showModal, setShowModal] = useState(false);
   // Estado para bloquear cliques durante a checagem de pares
   const [isChecking, setIsChecking] = useState(false);
+
+  useEffect(() => {
+  document.body.style.backgroundColor = darkMode
+    ? '#121212'
+    : '#ffffff';
+  }, [darkMode]);
 
   // useEffect inicial para gerar o grid ao carregar o componente.
   useEffect(() => {
@@ -202,21 +214,31 @@ const App = () => {
   * Renderiza modal ao final do jogo.
   */
   return (
-    <C.Container>
-      <Header time={timeElapsed} moves={moveCount} onReset={resetAndCreateGrid} />
-
-      <GameGrid gridItems={gridItems} onItemClick={handleItemClick} />
-        <EndGameModal
-        visible={showModal}
-        time={timeElapsed}
-        moves={moveCount}
-        record={record}
-        onRestart={() => {
-        setShowModal(false);
-        resetAndCreateGrid();
-        }}
-      />
-    </C.Container>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+         {/* Botão GLOBAL de Dark Mode */}
+      <C.ThemeToggle onClick={() => setDarkMode(prev => !prev)}>
+      {darkMode ? '☀️' : '🌙'}
+      </C.ThemeToggle>
+      
+      <C.Container>
+        <Header
+        time={timeElapsed} 
+        moves={moveCount} 
+        onReset={resetAndCreateGrid}
+        />
+        <GameGrid gridItems={gridItems} onItemClick={handleItemClick} />
+          <EndGameModal
+          visible={showModal}
+          time={timeElapsed}
+          moves={moveCount}
+          record={record}
+          onRestart={() => {
+          setShowModal(false);
+          resetAndCreateGrid();
+          }}
+        />
+      </C.Container>
+    </ThemeProvider>
   );
 };
 

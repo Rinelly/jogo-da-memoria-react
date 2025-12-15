@@ -8,11 +8,17 @@ import styled from 'styled-components';
  * Utiliza flexbox para distribuição dos elementos e responsividade em telas menores.
  */
 export const Wrapper = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 20px 10px;
   flex-wrap: wrap;
+
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
+
+  transition: background-color 0.3s ease, color 0.3s ease;  
 
    @media (max-width: 750px) {
       justify-content: center;
@@ -62,4 +68,21 @@ export const InfoArea = styled.div`
       justify-content: space-around;
       text-align: center;
     }
+`;
+
+export const ThemeToggle = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
